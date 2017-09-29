@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#263238</color>
+    <color name="colorPrimaryDark">#000a12</color>
+    <color name="colorAccent">#4f5b62</color>
+    <color name="cardview_task">#b0bec5</color>
+    <color name="blanco">#ffffff</color>
+    <color name="rojo">#ff0000</color>
+    <color name="gris">#5e5e5e</color>
+    <color name="amarillo">#FFFF00</color>
+</resources>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">todolist</string>
+    <string name="escribe_tarea">Que tienes que hacer ?</string>
+    <string name="nombre_usuario">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="registrar">Registrar</string>
+    <string name="Ingreso">Click en Ingresar</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="nombre_completo">Nombre Completo</string>
+    <string name="registro">Registrando</string>
+    <string name="mensaje_1">Click en Ingreso</string>
+    <string name="tieneUsuario">Tienes Usuario</string>
+    <string name="email">Correo Electronico</string>
+    <string name="facebook_app_id">1754223128203809</string>
+    <string name="fb_login_protocol_scheme">fb1754223128203809</string>
+</resources>
