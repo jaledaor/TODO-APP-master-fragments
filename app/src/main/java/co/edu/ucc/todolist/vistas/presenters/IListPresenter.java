@@ -10,7 +10,7 @@ import co.edu.ucc.todolist.modelo.Tarea;
 
 public interface IListPresenter {
 
-    void addTarea(String descTarea);
+    void addTarea(String descTarea, String fecha);
 
     List<Tarea> obtenerTareas();
 

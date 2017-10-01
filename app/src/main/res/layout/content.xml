@@ -24,15 +24,16 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.9"
             android:hint="@string/escribe_tarea"
-            android:inputType="text" />
+            android:inputType="text"
+            android:visibility="invisible"/>
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/btnEnviarTarea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginRight="1dp"
             android:backgroundTint="@color/colorPrimary"
-            android:src="@android:drawable/ic_media_play" />
+            android:src="@android:drawable/ic_input_add" />
 
     </LinearLayout>
 

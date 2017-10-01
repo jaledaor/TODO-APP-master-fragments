@@ -62,8 +62,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
+        LoginManager.getInstance().logOut();
         setContentView(R.layout.activity_login);
         loginButton = (LoginButton) findViewById(R.id.login_button);
         callbackManager = CallbackManager.Factory.create();
@@ -72,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
         database_control = FirebaseDatabase.getInstance();
-        reference_control = database_control.getReference("hogar");
+        //reference_control = database_control.getReference("hogar");
         // Initialize your instance of callbackManager//
 
         loginButton.setReadPermissions("email");
@@ -132,8 +131,6 @@ public class LoginActivity extends AppCompatActivity {
     @OnClick(R.id.login_button)
     public void faceLogin() {
         // Register your callback//
-
-
     }
 
     @Override

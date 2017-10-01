@@ -11,8 +11,12 @@ public class Tarea {
 
     @ColumnInfo(name="nombre")
     private String nombre;
+    @ColumnInfo(name="fecha")
+    private String fecha_task;
     @ColumnInfo(name="realizada")
     private boolean realizada;
+
+
 
     public Tarea() {
 
@@ -33,4 +37,8 @@ public class Tarea {
     public void setRealizada(boolean realizada) {
         this.realizada = realizada;
     }
+
+    public String getFecha_task() {return fecha_task;}
+
+    public void setFecha_task(String fecha_task) {this.fecha_task = fecha_task;}
 }

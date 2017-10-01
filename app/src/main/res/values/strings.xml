@@ -14,4 +14,18 @@
     <string name="email">Correo Electronico</string>
     <string name="facebook_app_id">1754223128203809</string>
     <string name="fb_login_protocol_scheme">fb1754223128203809</string>
+    <string name="datepicker">Elegir Fecha</string>
+    <string name="input_content">Tareas</string>
+    <string name="input_hint">Tarea a Adicionar</string>
+    <string name="input">Tarea a Adicionar</string>
+    <string name="submit">Crear Tarea</string>
+    <string name="date_picker">Seleccione la Fecha</string>
+    <string name="info_title">Crear Tarea</string>
+    <string name="ok">Crear</string>
+    <string name="cancel">Cancelar</string>
+    <string name="info_description">Soy el Mensaje</string>
+    <string name="fecha_select">Fecha Elegida</string>
+    <string name="cargar_date">Elegir Fecha</string>
+    <string name="success_login_msg">Exito</string>
+    <string name="error_login_msg">Fallo</string>
 </resources>

@@ -53,6 +53,7 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.ItemTo
 
         holder.tvTarea.setText(tarea.getNombre());
         holder.chkTarea.setChecked(tarea.isRealizada());
+        holder.fecha_tarea.setText(tarea.getFecha_task());
     }
 
     @Override
@@ -67,6 +68,9 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.ItemTo
 
         @BindView(R.id.tvTarea)
         TextView tvTarea;
+
+        @BindView(R.id.fecha_tarea)
+        TextView fecha_tarea;
 
         public ItemTodoList(View itemView) {
             super(itemView);

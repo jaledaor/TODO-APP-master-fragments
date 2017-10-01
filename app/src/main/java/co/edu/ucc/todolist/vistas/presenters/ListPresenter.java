@@ -22,10 +22,12 @@ public class ListPresenter implements IListPresenter {
     }
 
     @Override
-    public void addTarea(String descTarea) {
+    public void addTarea(String descTarea, String fecha) {
         Tarea objTarea = new Tarea();
+
         objTarea.setNombre(descTarea);
         objTarea.setRealizada(false);
+        objTarea.setFecha_task(fecha);
 
         ltarea.addTarea(objTarea);
 
