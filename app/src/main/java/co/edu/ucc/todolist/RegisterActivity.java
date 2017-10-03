@@ -51,7 +51,6 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
         reference = database.getReference("usuarios");
-        reference_temp = database.getReference("hogar");
     }
 
     @OnClick(R.id.btn_Registrar)
