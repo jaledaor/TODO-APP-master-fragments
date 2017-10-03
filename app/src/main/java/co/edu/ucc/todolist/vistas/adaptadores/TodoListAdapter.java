@@ -45,9 +45,13 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.ItemTo
         if (tarea.isRealizada()) {
             holder.tvTarea.setPaintFlags(holder.tvTarea.getPaintFlags()
                     | Paint.STRIKE_THRU_TEXT_FLAG);
+            /*holder.fecha_tarea.setPaintFlags(holder.fecha_tarea.getPaintFlags()
+                    | Paint.STRIKE_THRU_TEXT_FLAG);*/
         }else{
             holder.tvTarea.setPaintFlags(holder.tvTarea.getPaintFlags()
                     & ~Paint.STRIKE_THRU_TEXT_FLAG);
+            /*holder.fecha_tarea.setPaintFlags(holder.fecha_tarea.getPaintFlags()
+                    & ~Paint.STRIKE_THRU_TEXT_FLAG);*/
         }
 
 
