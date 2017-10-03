@@ -8,7 +8,7 @@ import co.edu.ucc.todolist.modelo.Tarea;
 import co.edu.ucc.todolist.vistas.IListView;
 
 /**
- * Created by jggomez on 12-Sep-17.
+ * Created by Jaledaor on 29-Sep-17.
  */
 
 public class ListPresenter implements IListPresenter {

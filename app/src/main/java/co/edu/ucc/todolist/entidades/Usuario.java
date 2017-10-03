@@ -1,7 +1,7 @@
 package co.edu.ucc.todolist.entidades;
 
 /**
- * Created by ADMIN on 29/08/2017.
+ * Created by Jaledaor on 29/09/2017.
  */
 
 public class Usuario {

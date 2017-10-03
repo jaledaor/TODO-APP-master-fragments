@@ -30,7 +30,7 @@
         android:text="@string/cargar_date"
         android:textColor="@android:color/white" />
 
-    <EditText
+    <TextView
         android:id="@+id/fecha_elegida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

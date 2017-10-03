@@ -6,7 +6,7 @@ import java.util.List;
 import co.edu.ucc.todolist.modelo.Tarea;
 
 /**
- * Created by jggomez on 05-Sep-17.
+ * Created by Jaledaor on 29-Sep-17.
  */
 
 public class LTarea implements ILtarea {

@@ -4,7 +4,7 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 
 /**
- * Created by jggomez on 05-Sep-17.
+ * Created by Jaledaor on 29-Sep-17.
  */
 @Entity
 public class Tarea {

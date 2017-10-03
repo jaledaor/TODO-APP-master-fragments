@@ -16,7 +16,7 @@ import co.edu.ucc.todolist.R;
 import co.edu.ucc.todolist.modelo.Tarea;
 
 /**
- * Created by jggomez on 12-Sep-17.
+ * Created by Jaledaor on 29-Sep-17.
  */
 
 public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.ItemTodoList> {

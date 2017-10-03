@@ -1,7 +1,6 @@
 package co.edu.ucc.todolist.vistas;
 
 import android.app.DatePickerDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,15 +8,18 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.InputType;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ListAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
 import java.util.List;
@@ -25,7 +27,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import co.edu.ucc.todolist.LoginActivity;
+import co.edu.ucc.todolist.ControlActivity;
 import co.edu.ucc.todolist.R;
 import co.edu.ucc.todolist.modelo.Tarea;
 import co.edu.ucc.todolist.vistas.adaptadores.TodoListAdapter;
@@ -53,6 +55,11 @@ public class ListActivity extends AppCompatActivity implements
     public int year;
     DatePickerDialog datePickerDialog;
 
+    private FirebaseAuth mAuth_control;
+    private FirebaseDatabase database_control;
+    private DatabaseReference reference_control;
+    String UID = "";
+
 
 
     @Override
@@ -74,6 +81,12 @@ public class ListActivity extends AppCompatActivity implements
 
         rvListTODO.setAdapter(new TodoListAdapter(lsTarea, this));
 
+        mAuth_control = FirebaseAuth.getInstance();
+        database_control = FirebaseDatabase.getInstance();
+        reference_control = database_control.getReference("tareas");
+        UID = mAuth_control.getCurrentUser().getUid();
+
+
     }
     /*private void showToast(String message) {
         if (mToast != null) {
@@ -93,7 +106,7 @@ public class ListActivity extends AppCompatActivity implements
         View mView = getLayoutInflater().inflate(R.layout.dialog_datepicker, null);
         final EditText input = (EditText) mView.findViewById(R.id.text_input);
         final Button btn_fecha = (Button) mView.findViewById(R.id.btn_cargar_date);
-        final EditText fecha_select = (EditText) mView.findViewById(R.id.fecha_elegida);
+        final TextView fecha_select = (TextView) mView.findViewById(R.id.fecha_elegida);
 
         btn_fecha.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,8 +142,26 @@ public class ListActivity extends AppCompatActivity implements
                                     R.string.success_login_msg,
                                     Toast.LENGTH_SHORT).show();
                             m_Text = input.getText().toString();
+
+                        Tarea objTarea = new Tarea();
+                        objTarea.setNombre(m_Text);
+                        objTarea.setRealizada(false);
+                        objTarea.setFecha_task(fecha_select.getText().toString());
+
+                        listPresenter.addTarea(m_Text, fecha_select.getText().toString());
+                        reference_control.child(UID).push().setValue(objTarea);
+                        /*reference_control.child(UID).setValue(objTarea).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                } else {
+                                    Toast.makeText(ListActivity.this,
+                                            "Error " + task.getException().getMessage(),
+                                            Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });*/
                             dialog.dismiss();
-                            listPresenter.addTarea(m_Text, fecha_select.getText().toString());
 
                     }
                 })
