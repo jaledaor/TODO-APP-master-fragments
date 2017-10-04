@@ -2,17 +2,24 @@ package co.edu.ucc.todolist.modelo;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
 
 /**
  * Created by Jaledaor on 29-Sep-17.
  */
-@Entity
+
+@Entity(tableName="tareas")
 public class Tarea {
+
+    @PrimaryKey(autoGenerate = true)
+    private int id;
 
     @ColumnInfo(name="nombre")
     private String nombre;
+
     @ColumnInfo(name="fecha")
     private String fecha_task;
+
     @ColumnInfo(name="realizada")
     private boolean realizada;
 

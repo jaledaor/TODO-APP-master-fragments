@@ -79,24 +79,14 @@ public class RegisterActivity extends AppCompatActivity {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 if (task.isSuccessful()) {
-                                                    Espacios espacio = new Espacios();
-                                                    reference_temp.child(UID).setValue(espacio).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                        @Override
-                                                        public void onComplete(@NonNull Task<Void> task) {
-                                                            if (task.isSuccessful()) {
-                                                                Intent listActivity = new Intent(getApplicationContext(),
-                                                                        ListActivity.class);
-                                                                startActivity(listActivity);
-                                                                finish();
-                                                                return;
-                                                            } else {
-                                                                Toast.makeText(RegisterActivity.this,
-                                                                        "Error " + task.getException().getMessage(),
-                                                                        Toast.LENGTH_SHORT).show();
-                                                            }
-                                                        }
-                                                    });
 
+                                                                Toast.makeText(RegisterActivity.this,
+                                                                        "Registro Exitoso " ,
+                                                                        Toast.LENGTH_SHORT).show();
+                                                    Intent ingresar = new Intent(getApplicationContext(), ListActivity.class);
+                                                    startActivity(ingresar);
+                                                    finish();
+                                                    return;
 
                                                 } else {
                                                     Toast.makeText(RegisterActivity.this,
