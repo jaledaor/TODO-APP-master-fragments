@@ -60,6 +60,14 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.ItemTo
         holder.fecha_tarea.setText(tarea.getFecha_task());
     }
 
+    public void setDataset(List<Tarea> dataset){
+        this.dataset=dataset;
+    }
+
+    public void setItemDataset(Tarea tarea, int index){
+        this.dataset.set(index, tarea);
+    }
+
     @Override
     public int getItemCount() {
         return dataset.size();

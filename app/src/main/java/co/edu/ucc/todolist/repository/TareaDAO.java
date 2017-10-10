@@ -28,5 +28,5 @@ public interface TareaDAO {
     List<Tarea> obtenerTodos();
 
     @Query ("select * from tareas where id = :id")
-    Tarea obtenerXID();
+    Tarea obtenerXID(int id);
 }

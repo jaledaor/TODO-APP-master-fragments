@@ -11,7 +11,9 @@ import android.arch.persistence.room.PrimaryKey;
 @Entity(tableName="tareas")
 public class Tarea {
 
+
     @PrimaryKey(autoGenerate = true)
+
     private int id;
 
     @ColumnInfo(name="nombre")
@@ -27,6 +29,14 @@ public class Tarea {
 
     public Tarea() {
 
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {

@@ -15,16 +15,16 @@ public abstract class AppDB extends RoomDatabase{
 
     private static AppDB instancia=null;
 
-    private AppDB(){}
-
     public static void init(Context context){
         if(instancia==null){
 
-            instancia = Room.databaseBuilder(context, AppDB.class, "tareas-db").build();
+            instancia = Room.databaseBuilder(context, AppDB.class, "tareas-db").allowMainThreadQueries().build();
         }
     }
 
     public static AppDB getInstancia (){
         return instancia;
     }
+
+    public abstract TareaDAO getTareaDAO();
 }
