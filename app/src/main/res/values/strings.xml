@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">todolist</string>
+    <string name="app_name">TO-DO App</string>
     <string name="escribe_tarea">Que tienes que hacer ?</string>
     <string name="nombre_usuario">Usuario</string>
     <string name="password">Contraseña</string>
@@ -26,6 +26,13 @@
     <string name="info_description">Soy el Mensaje</string>
     <string name="fecha_select">Fecha Elegida</string>
     <string name="cargar_date">Elegir Fecha</string>
-    <string name="success_login_msg">Exito</string>
+    <string name="success_login_msg">Exito al crear la Tarea</string>
     <string name="error_login_msg">Fallo</string>
+    <string name="no_cuenta">No tienes una Cuenta!!</string>
+    <string name="recordar_contrasena">Recordar Contraseña</string>
+    <string name="registrar_nuevo">Registrar</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -83,7 +83,7 @@ public class ListActivity extends AppCompatActivity implements
         mAuth_control = FirebaseAuth.getInstance();
         database_control = FirebaseDatabase.getInstance();
         reference_control = database_control.getReference("tareas");
-        UID = mAuth_control.getCurrentUser().getUid();
+        //UID = mAuth_control.getCurrentUser().getUid();
 
 
     }
