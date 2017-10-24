@@ -1,18 +1,18 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="co.edu.ucc.todolist.vistas.fragmentos.LoginFragment">
+    tools:context="co.edu.ucc.todolist.vistas.fragmentos.RegisterFragment">
 
     <ProgressBar
+        android:id="@+id/progress"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top|center"
         android:indeterminate="true"
-        android:visibility="invisible"
-        android:id="@+id/progress"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+        android:visibility="invisible" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,15 +23,27 @@
         <ImageView
             android:layout_width="150dp"
             android:layout_height="0dp"
-            android:layout_weight="0.4"
             android:layout_gravity="center_horizontal"
-            android:src="@mipmap/ic_launcher_round"/>
+            android:layout_weight="0.4"
+            android:src="@mipmap/ic_launcher_round" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:orientation="vertical"
-            android:layout_weight="0.6">
+            android:layout_weight="0.6"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nombres">
+
+                <EditText
+                    android:id="@+id/text_fragment_nombres"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -39,52 +51,48 @@
                 android:hint="@string/email">
 
                 <EditText
+                    android:id="@+id/text_register_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/text_frag_email"
-                    android:inputType="textEmailAddress"/>
+                    android:inputType="textEmailAddress" />
             </android.support.design.widget.TextInputLayout>
+
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/txtPasswordLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/password"
                 app:passwordToggleEnabled="true">
+
                 <EditText
+                    android:id="@+id/text_register_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/text_frag_password"
-                    android:inputType="textPassword"/>
+                    android:inputType="textPassword" />
             </android.support.design.widget.TextInputLayout>
+
             <Button
+                android:id="@+id/btnFragRegistro"
+                style="@style/BtnAuthStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/ingresar"
-                android:paddingStart="50dp"
-                android:paddingEnd="50dp"
                 android:layout_gravity="center"
-                style="@style/BtnAuthStyle"
-                android:id="@+id/bntIngresarLogin"/>
+                android:paddingEnd="50dp"
+                android:paddingStart="50dp"
+                android:text="@string/registrar_nuevo" />
 
             <TextView
+                android:id="@+id/txtRecordarContrasena"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/recordar_contrasena"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:clickable="true"
-                android:id="@+id/txtRecordarContrasena" />
+                android:text="@string/recordar_contrasena" />
 
         </LinearLayout>
 
     </LinearLayout>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_frag_registrar"
-        android:text="@string/registrar_nuevo"
-        android:layout_gravity="bottom"
-        style="@style/BtnAuthStyle"/>
+
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"

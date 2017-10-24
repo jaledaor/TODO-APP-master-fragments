@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,13 +31,13 @@ import co.edu.ucc.todolist.R;
  */
 public class LoginFragment extends Fragment {
 
-    @BindView(R.id.txtEmailLogin)
-    EditText txtEmail;
+    @BindView(R.id.text_frag_email)
+    EditText text_frag_email;
 
-    @BindView(R.id.txtPasswordLogin)
-    EditText txtContrasena;
+    @BindView(R.id.text_frag_password)
+    EditText text_frag_password;
 
-    FirebaseAuth firebaseauth;
+    FirebaseAuth firebaseauth = FirebaseAuth.getInstance();
 
     private OnLoginFragmentInteraction mListener;
 
@@ -66,8 +67,8 @@ public class LoginFragment extends Fragment {
     }
     @OnClick(R.id.bntIngresarLogin)
     public void ClickIngresarLogin(){
-        final String email= txtEmail.getText().toString();
-        final String contrasena= txtContrasena.getText().toString();
+        final String email= text_frag_email.getText().toString();
+        final String contrasena= text_frag_password.getText().toString();
 
         firebaseauth.signInWithEmailAndPassword(email, contrasena).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -81,6 +82,18 @@ public class LoginFragment extends Fragment {
             }
         });
 
+    }
+
+    @OnClick(R.id.btn_frag_registrar)
+    public void ClickRegistro(){
+        // Crea el nuevo fragmento y la transacción.
+        Fragment nuevoFragmento = new RegistroFragment();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.frameAuthActivity, nuevoFragmento);
+        transaction.addToBackStack(null);
+
+        // Commit a la transacción
+        transaction.commit();
     }
 
     @Override

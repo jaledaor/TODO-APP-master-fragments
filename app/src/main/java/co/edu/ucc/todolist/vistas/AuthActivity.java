@@ -8,8 +8,9 @@ import android.os.Bundle;
 import co.edu.ucc.todolist.R;
 import co.edu.ucc.todolist.vistas.ListActivity;
 import co.edu.ucc.todolist.vistas.fragmentos.LoginFragment;
+import co.edu.ucc.todolist.vistas.fragmentos.RegistroFragment;
 
-public class AuthActivity extends AppCompatActivity implements LoginFragment.OnLoginFragmentInteraction{
+public class AuthActivity extends AppCompatActivity implements LoginFragment.OnLoginFragmentInteraction,RegistroFragment.OnRegistroFragmentInteraction{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,13 @@ public class AuthActivity extends AppCompatActivity implements LoginFragment.OnL
 
     @Override
     public void ingresar(String email) {
+        Intent intent = new Intent(this, ListActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
+    public void registro() {
         Intent intent = new Intent(this, ListActivity.class);
         startActivity(intent);
         finish();
